@@ -14,12 +14,13 @@ Diciembre: 21000
 }
 
 def filter(hash)
-  hash = ARGV[0].to_i
   filtered_hash = {}
-  ventas.each do |k,v|
-    if v > 45000
+  hash.each do |k,v|
+    if v > ARGV[0].to_i
       filtered_hash[k] = v
     end
   end
   return filtered_hash
 end
+
+puts filter(ventas)

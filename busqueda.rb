@@ -13,12 +13,9 @@ ventas = {
   Diciembre: 21000
 }
 
-busqueda = ARGV[0].to_i
-
-ventas.each do |k,v|
-  if busqueda == v
-    puts k
-  else
-    puts "No encontrado"
-  end
+ventas = ventas.invert
+puts ventas
+ARGV.each do |i|
+  match = ventas[i.to_i]
+  puts match ? match : "No encontrado"
 end
